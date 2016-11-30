@@ -67,7 +67,6 @@
     "Margherita Pizza with Mushrooms and Cantaloupe",
     "Orange Glazed Vegan Chicken Cutlet",
     "Sweet and Spicy Roasted Brussels Sprouts",
-    "Smoky Buttered Brussels Sprouts",
     "Jelly Bean Ice Cream",
     "Brussels Sprouts and Egg Salad with Hazelnuts"]
 
@@ -94,19 +93,19 @@
         }
       };
 
-      // let button = document.getElementById('click-for-more');
-      // button.addEventListener('click', moreBrusselsSprouts, false);
-      //
-      // var i = 1;
-      // var moreBrusselsSprouts = (event) => {
-      //   addGoodDishes(firstListItem, goodDishes[i]);
-      //   event.target = i++;
-      // };
+      var i = 1;
+      var moreBrusselsSprouts = (event) => {
+        if (goodDishes[i] == undefined) {
+          addGoodDishes(firstListItem, "You want MOOOORRRE?!?")
+        } else {
+          addGoodDishes(firstListItem, goodDishes[i]);
+          event.target = i++;
+        }
+      };
 
+      let button = document.getElementById('click-for-more');
+      button.addEventListener('click', moreBrusselsSprouts, false);
 
-      for (var i = 1; i < goodDishes.length; i++) {
-        addGoodDishes(firstListItem, goodDishes[i]);
-      }
     }
     buildGoodDishes(dishes);
 
